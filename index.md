@@ -2,10 +2,14 @@
 layout: default
 ---
 
-# [](#aulas)Aulas
-# [](#material)Material Complementar
-## [](#cederj)Vídeo-aulas CEDERJ
+# [](#aulas)Apresentação
+ - [Ementa](pdfs/ementa.pdf)
 
+# [](#aulas)Aulas
+
+# [](#material)Material Complementar
+
+## [](#cederj)Vídeo-aulas CEDERJ
  - [Aula 001](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_001.xml)
  - [Aula 002](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_002/Aula_002.xml)
  - [Aula 003](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_003/Aula_003.xml)
