@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
+![](assets/images/yoda.png)
+ > Muito a aprender vocês ainda têm.
 
 # [](#aulas)Apresentação
+Bem vindos, ao mundo da programação orientada a objetos, jovens _padawans_
  - [Ementa](pdfs/ementa.pdf)
 
 # [](#aulas)Aulas
