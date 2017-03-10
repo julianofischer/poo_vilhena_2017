@@ -9,6 +9,7 @@ Bem vindos, ao mundo da programação orientada a objetos, jovens _padawans_
  - [Ementa](pdfs/ementa.pdf)
 
 # [](#aulas)Aulas
+ - [Aula 01 - paradigmas de programação e introdução](aula1-paradigmas.html)
 
 # [](#material)Material Complementar
 
