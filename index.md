@@ -6,22 +6,22 @@ layout: default
 # [](#material)Material Complementar
 ## [](#cederj)Vídeo-aulas CEDERJ
 
- - [Aula 001](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_001.xml")
- - [Aula 002](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_002.xml")
- - [Aula 003](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_003.xml")
- - [Aula 004](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_004.xml")
- - [Aula 005](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_005.xml")
- - [Aula 006](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_006.xml")
- - [Aula 007](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_007.xml")
- - [Aula 008](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_008.xml")
- - [Aula 009](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_009.xml")
- - [Aula 010](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_010.xml")
- - [Aula 011](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_011.xml")
- - [Aula 012](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_012.xml")
- - [Aula 013](href="http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_013.xml")
+ - [Aula 001](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_001.xml)
+ - [Aula 002](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_002.xml)
+ - [Aula 003](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_003.xml)
+ - [Aula 004](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_004.xml)
+ - [Aula 005](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_005.xml)
+ - [Aula 006](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_006.xml)
+ - [Aula 007](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_007.xml)
+ - [Aula 008](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_008.xml)
+ - [Aula 009](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_009.xml)
+ - [Aula 010](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_010.xml)
+ - [Aula 011](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_011.xml)
+ - [Aula 012](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_012.xml)
+ - [Aula 013](http://videoaula.rnp.br/v.php?f=/cederj/sistemas_comp/ead05021/Aula_001/Aula_013.xml)
 
 
-<--
+<---
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](another-page).
@@ -141,4 +141,4 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
--->
+--->
