@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Programação Orientada a Objetos</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			function init()
+			{
+				var canvas = document.getElementById("canvas");
+				if(canvas.getContext){
+					var ctx = canvas.getContext("2d");
+					// Draw triangle
+					ctx.fillStyle="#A2322E";
+					ctx.beginPath();
+					// Draw a triangle location for each corner from x:y 100,110 -> 200,10 -> 300,110 (it will return to first point)
+					ctx.moveTo(275,110);
+					ctx.lineTo(375,10);
+					ctx.lineTo(475,110);
+					ctx.closePath();
+					ctx.fill();
+				}
+			}
+			onload=init;
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Programação Orientada a Objetos</h1>
+					<h3>Paradigma Orientado a Objeto, Classe e Objeto</h3>
+					<p>
+						<small>Professor: Juliano Fischer Naves / <a href="mailto:juliano.naves@ifro.edu.br">juliano.naves@ifro.edu.br</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+					<h2>Ementa</h2>
+					<ul>
+						<li class="fragment"> Paradigma Orientado a Objeto, Classe e Objeto </li>
+						<li class="fragment"> Mensagem e encapsulamento </li>
+						<li class="fragment"> Modificadores de Acesso </li>
+						<li class="fragment"> Herança </li>
+						<li class="fragment"> Polimorfismo </li>
+						<li class="fragment"> Ligação Dinâmica </li>
+						<li class="fragment"> Tratamento de Exceções </li>
+						<li class="fragment"> Coleções </li>
+					</ul>
+					</section>
+					
+					<section>
+					<ul>
+						<li> Classes Abstratas </li>
+						<li class="fragment"> Interface </li>
+						<li class="fragment"> Atributos e Métodos Estáticos </li>
+						<li class="fragment"> Arquivos </li>
+						<li class="fragment"> Genéricos </li>
+						<li class="fragment"> Modelagem UML </li>
+						<li class="fragment"> Swing </li>
+						<li class="fragment"> Padrões de Projeto </li>
+					</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Roteiro</h2>
+					<ul>
+						<li><h4>Paradigmas de Programação</h4></li>
+							<ul>
+								<li>Programação Imperativa</li>
+								<li>Programação Funcional</li>
+								<li>Programação em Lógica</li>
+								<li>Programação Orientada a Objetos</li>
+							</ul>
+						<li><h4>Classes</h4></li>
+						<li><h4>Objetos</h4></li>
+						<li><h4>Exercícios</h4></li>
+				</section>
+
+				<section>
+					<h2>Paradigmas de Programação</h2>
+					<p> Definição (TUCKER, 2008): </p>
+					<blockquote>
+						...um paradigma de programação é um padrão para a resolução de problemas relacionados a um determinado gênero de programas e linguagens.			</blockquote>
+					
+				</section>
+
+				<section>
+					<h2>Paradigma Imperativo</h2>
+					<ul>
+					    <li>Baseado em ações ou comandos que mudam o estado (variáveis) do programa</li>
+					    <li>Programador diz ao programa o que fazer</li>
+					    <li>Baseado na arquitetura de <a href="https://pt.wikipedia.org/wiki/Arquitetura_de_von_Neumann">John Von Neumann</a></li>
+					    <li><a href="http://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm">C</a>, <a href="http://www2.ic.uff.br/~bianca/prog3/index_arquivos/fortran.pdf">Fortran</a>, <a href="http://www.cos.ufrj.br/~sergio/ApostilaPascal.pdf">Pascal</a> ...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Linguagem C</h2>
+					<p> Ler dois números e somá-los </p>
+					<pre><code class="c" data-trim>
+#include "stdio.h"
+int main()
+{
+    int n1, n2;
+    printf("Digite dois números inteiros:\n");
+    scanf("%d %d", &n1, &n2);
+    printf("A soma dos números %d e %d é: %d.\n”, n1, n2, n1+n2);
+    return 0;
+}
+
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Paradigma Funcional</h2>
+					<ul>
+					    <li>Baseado em avaliação de funções matemáticas</li>
+					    <li>Evita estados</li>
+					    <li><a href="http://www.dca.fee.unicamp.br/courses/EA072/lisp9596/Lisp9596.html">LISP</a>, <a href="https://web.fe.up.pt/~fnf/leic/ip1/cap1.PDF">Scheme</a>, ...</li>
+					</ul>
+					
+				</section>
+
+				<section>
+					<h2>Linguagem LISP (<a href="http://www.clisp.org/">CLISP</a>)</h2>
+					<p>Somar dois números</p>
+					<pre><code class="clisp" data-trim>
+(defun soma (x y) (+ x y))
+(soma 1 3)
+4
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Paradigma Lógico</h2>
+					<ul>
+					    <li>Raízes na <a href="https://pt.wikipedia.org/wiki/L%C3%B3gica#L.C3.B3gica_formal">lógica formal</a></li>
+					    <li>Fornece-se fatos e regras a uma base de dados</li>
+					    <li>Posteriormente, consultas são feitas a esta base</li>
+					    <li>PROLOG</li>
+					</ul>
+					
+				</section>
+
+				<section>
+					<h2>Linguagem <a href="http://www.gprolog.org/">GPROLOG</a></h2>
+					<pre><code class="prolog" data-trim>
+gato(tom).
+gato(garfield).
+rato(jerry).
+leao(simba).
+felino(X) :- gato(X);leao(X).
+felino(simba).
+yes
+felino(tom).
+yes
+felino(jerry).
+no
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Paradigma Orientado a Objetos</h2>
+					<ul>
+					    <li>Baseado na interação e composição entre objetos</li>
+					    <li>Abstrai o mundo real</li>
+					    <li>"Simulação" do mundo real</li>
+					    <li><a href="https://www.java.com/pt_BR/">Java</a>, <a href="http://www.cplusplus.com/doc/tutorial/">C++</a>, <a href="http://www.smalltalk.org/main/">Smalltalk</a> ...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2> Pilares de P.O.O. </h2>
+					<figure><img src="imgs/pillars.jpg" alt="4 Pilares de Programação Orientada a Objetos" width=80%></figure>
+				</section>
+
+				<section>
+					<h2>Classe</h2>
+					<div id="canvas-container"><canvas id="canvas" width="770" height="150" >Seu browser não suporta canvas</canvas></div>
+					<p class="fragment">Que figura é essa?</p>
+					<p class="fragment">Como você sabe?</p>
+				</section>
+
+				<section>
+					<h2>Classe</h2>
+					<p> Definição: </p>
+					<blockquote>
+						Representa um conjunto de características e comportamentos para um determinado conjunto de objetos.
+                                        </blockquote>
+					<h3 class="fragment"> Quais as características dos triângulos? </h3>		
+				</section>
+
+				<section>
+					<figure><img src="assets/images/cat.jpg" alt="4 Pilares de Programação Orientada a Objetos" width=80%></figure>
+				</section>
+
+
+				<section>
+					<h2>Objeto</h2>
+					<p> Definição: </p>
+					<blockquote>
+						Um objeto e uma instância (exemplo, modelo, amostra, espécime...) de uma classe.
+                                        </blockquote>
+					<p class="fragment"> Exemplo: somos objetos da classe Humanos</p>		
+				</section>
+
+				<section>
+					<h2>Atributo</h2>
+					<p> Definição: </p>
+					<blockquote>
+						É uma característica dos objetos de uma classe.
+                                        </blockquote>
+					<p class="fragment"> Exemplo: nome, altura e peso são atributos da classe Humano</p>		
+				</section>
+
+				<section>
+					<h2>Método</h2>
+					<p> Definição: </p>
+					<blockquote>
+						É uma ação que os objetos de uma classe pode realizar.
+                                        </blockquote>
+					<p class="fragment"> Alimentar-se, Andar e Falar são ações que os objetos da classe humano podem realizar.</p>
+				</section>
+
+				<section>
+					<h2>Processo de Abstração</h2>
+					<p> Definição: </p>
+					<blockquote>
+						Processo para representar um grupo de objetos através de seus atributos, selecionando determindos aspectos de um problema.
+                                        </blockquote>
+					
+				</section>
+
+				<section>
+					<h2>Processo de Abstração</h2>
+					<p> Passos: </p>
+					<ol>
+					    <li>Classificação: categorização dos objetos em grupos com base nos atributos comuns.</li>
+					    <li>Generalização/Especialização: A partir de dois ou mais objetos, abstrai-se uma categoria mais genérica.</li>
+					    <li>Agregação/Decomposição: Composição de uma nova categoria como um agregado de categorias pré-existentes.</li>
+					</ol>
+					
+				</section>
+
+				<section>
+					<h2>Conceitos de O.O. - Coesão</h2>
+					<p> Definição: </p>
+					<blockquote>
+						Indica o grau em que uma classe tem uma finalidade única e bem orientada.
+                                        </blockquote>
+				</section>
+
+				<section>
+					<h2>Conceitos de O.O. - Acoplamento</h2>
+					<p> Definição: </p>
+					<blockquote>
+						É o grau em que uma classe conhece sobre os membros de outra classe.
+                                        </blockquote>
+				</section>
+
+				<section>
+					<h1>Questões</h2>
+					<h2 class="fragment"> É preferível Alta ou Baixa coesão?</h2>
+					<h2 class="fragment"> É preferível Alto ou Baixo acoplamento?</h2>
+				</section>
+
+				<section>
+					<h2>Java - História</h2>
+					<ul>
+						<li>Criada na década de 90 (primeira aparição 1995)</li>
+						<li>Equipe de inovação da <a href="https://pt.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a> (green team)</li>
+						<li>Chefiada por <a href="https://pt.wikipedia.org/wiki/James_Gosling">James Gosling</a></li>
+						<li>1995: Netscape incorpora Java</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+					<h2>Java - Hoje</h2>
+					<ul>
+						<li>Plataforma de desenvolvimento mais utilizada no mundo</li>
+						<li class="fragment">Estima-se 10 milhões de desenvolvedores</li>
+						<li class="fragment">1 bilhão de downloads anuais</li>
+						<li class="fragment">97% dos computadores corporativos rodam Java</li>
+					</section>
+					<section>
+					<ul>
+						<li>100% do Blu-ray players rodam Java</li>
+						<li class="fragment">3 bilhões de celulares rodam Java</li>
+						<li class="fragment">125 milhões de TVs</li>
+						<li class="fragment">5 bilhões de Java Cards em uso</li>
+					</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2> Java is Everywhere! </h2>
+					<video controls autoplay>
+						<source data-src="videos/java.webm" type="video/webm" />
+					</video>
+				</section>
+
+
+				<section>
+					<h2>Java - Máquina Virtual</h2>					
+					<figure><img src="imgs/jvm.jpg" alt="Java Virtual Machine" width=60%></figure>
+				</section>
+
+				<section>
+					<h2>Java - Tipos de Dados</h2>
+					<ul>
+						<li>boolean</li>
+						<li>byte</li>
+						<li>short</li>
+						<li>char</li>
+						<li>int</li>
+						<li>float</li>
+						<li>long</li>
+						<li>double</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Java - Classe String</h2>
+					<p>Representa uma cadeia de caracteres</p>
+<pre><code class="java" data-trim>
+String str = "abc";
+
+char data[] = {'a','b','c'};
+String str2 = new String("data");
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Java - Observações</h2>
+					<ul>
+					    <li>É case sensitive</li>
+					    <li>Não existe ponteiro em Java. Somente referências a objetos.</li>
+					    <li>.java: código fonte</li>
+					    <li>.class: código intermediário (bytecode)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Java - Observações</h2>
+					<p>O nome do arquivo .java DEVE ser o mesmo nome da classe</p>
+					<h5>Exemplo:</h5> NomeClasse.java
+<pre><code class="java" data-trim>
+public class NomeClasse {
+    tipo atributo1;
+    tipo atributo2;
+    ...
+}				</code></pre>
+				</section>
+
+				<section>
+					<h2>Java - Observações</h2>
+					<p>As classes Java obedecem um estrutura de pacotes (package) de acordo com o caminho do código fonte dentro das pastas</p>
+					<h5>Exemplo:</h5> [PATH]/br/ufmt/exemplo/NomeClass.java
+		
+<pre><code class="java" data-trim>
+package br.ufmt.exemplo;
+
+public class NomeClasse {
+    tipo atributo1;
+    tipo atributo2;
+    ...
+}				</code></pre>
+				</section>
+
+				<section>
+					<h2>Java - Ambiente</h2>
+					<ul>
+					    <li>JRE: Java Runtime Environment</li>
+					        <ul>
+					             <li>Máquina Virtual Java (JVM)</li>
+					        </ul>
+					    <li>JDK: Java Development Kit</li>
+					        <ul>
+					             <li>javac - compilador</li>
+					             <li>java - interpretador</li>
+					             <li>javadoc - gerador de documentação</li>
+					             <li>jdb - debugger</li>
+					             <li>jar - ferramenta para gerência de Java Archives</li>
+					             <li>javap - disassembler</li>
+					        </ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Exercícios</h2>
+					<p> Crie as seguintes classes:</p>
+					<ol>
+					    <li>Representa um conjunto de clientes de uma loja.</li>
+					    <li>Representa um conjunto de produtos de uma loja.</li>
+					    <li>Representa um conjunto de quadrados.</li>
+					    <li>Representa um conjunto de círculos.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Classe Cliente</h2>
+				<section>
+					<pre style="font-size:130%"><code class="java" data-trim>
+class Cliente{
+     String nome;
+     String endereco;
+     String cpf;
+     int idade;
+}
+
+					</code></pre>
+				</section>
+				</section>
+
+				<section>
+					<h2>Classe Produto</h2>
+				<section>
+					<pre style="font-size:130%"><code class="java" data-trim>
+class Produto{
+     String nome;
+     String codigoDeBarras;
+     double peso;
+     double preco;
+     String marca;
+}
+
+					</code></pre>
+				</section>
+				</section>
+
+				<section>
+					<h2>Classe Quadrado</h2>
+				<section>
+					<pre style="font-size:130%"><code class="java" data-trim>
+class Quadrado{
+     double tamanhoDoLado
+     int x;
+     int y;
+     String cor;
+}
+
+					</code></pre>
+				</section>
+				</section>
+
+				<section>
+					<h2>Classe Círculo</h2>
+				<section>
+					<pre style="font-size:130%"><code class="java" data-trim>
+class Circulo{
+     int x;
+     int y;
+     double raio;
+}
+
+					</code></pre>
+				</section>
+				</section>
+
+				<section>
+					<h2>Links</h2>
+					<ul>
+					    <li><a href="https://pt.wikipedia.org/wiki/Arquitetura_de_von_Neumann">Arquitetura de Von Neumann</a> </li>
+					    <li><a href="http://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm">Introdução à linguagem C</a></li>
+					    <li><a href="http://www2.ic.uff.br/~bianca/prog3/index_arquivos/fortran.pdf">Programação em Fortran</a></li>
+					    <li><a href="http://www.cos.ufrj.br/~sergio/ApostilaPascal.pdf">Técnicas de Programação e Linguagem Pascal</a></li>
+					    <li><a href="http://www.dca.fee.unicamp.br/courses/EA072/lisp9596/Lisp9596.html">Introdução à Linguagem Lisp</a></li>
+					    <li><a href="https://web.fe.up.pt/~fnf/leic/ip1/cap1.PDF">Breve Introdução à Ling. Scheme</a></li>
+					    <li><a href="http://www.clisp.org/">Gnu Common Lisp</a></li>
+					    <li><a href="https://pt.wikipedia.org/wiki/L%C3%B3gica#L.C3.B3gica_formal">Verbete: Lógica Formal</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Links</h2>
+					<ul>
+					    <li><a href="http://www.gprolog.org/">Gnu Prolog</a></li>
+					    <li><a href="https://www.java.com/pt_BR/">Linguagem Java</a></li>
+					    <li><a href="http://www.cplusplus.com/doc/tutorial/">Linguagem C++</a></li>
+					    <li><a href="http://www.smalltalk.org/main/">Smalltalk.org</a></li>
+					    <li><a href="https://pt.wikipedia.org/wiki/Sun_Microsystems">Verbete: Sun Microsystems</a></li>
+					    <li><a href="https://pt.wikipedia.org/wiki/James_Gosling">Verbete: James Gosling</a></li>
+
+					</ul>
+				</section>
+
+				<section>
+					<h2>Agradecimentos</h2>
+					<ul>
+					    <li>Professor Raphael de Souza Rosa Gomes (UFMT)</li>
+					    <li>Professora Karen Figueiredo (UFMT)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Bibliografia</h2>
+					<ol>
+					    <li> TUCKER, Allen B; NOONAN, Robert E. Linguagens de programação: princípios e paradigmas. 2. ed. São Paulo: McGraw-Hill, 2008 </li>
+					    <li> SIERRA, Kathy e BATES, Bert. Guia de Estudo: Certificação para Programador Java 6</li>
+				</ol>	
+				</section>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
