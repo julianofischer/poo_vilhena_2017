@@ -5,7 +5,7 @@ layout: default
  > Muito a aprender vocês ainda têm.
 
 # [](#aulas)Apresentação
-Bem vindos, ao mundo da programação orientada a objetos, jovens _padawans_
+Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqui vocês poderão encontrar os slides das aulas, exercícios, soluções e outras informações relevantes, como a ementa do curso, disponibilizada abaixo.
  - [Ementa](pdfs/ementa.pdf)
 
 # [](#aulas)Aulas
