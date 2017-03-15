@@ -10,7 +10,7 @@ Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqu
 
 # [](#aulas)Aulas
  - [Aula 01 - paradigmas de programação e introdução](aula1-paradigmas.html)
- - [Aula 02 - resolução de exercícios](primeiroprojeto.zip)
+ - [Aula 02 (2A) - resolução de exercícios](primeiroprojeto.zip)
 
 # [](#material)Material Complementar
 
