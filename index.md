@@ -6,14 +6,14 @@ layout: default
 
 # [](#aulas)Apresentação
 Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqui vocês poderão encontrar os slides das aulas, exercícios, soluções e outras informações relevantes, como a ementa do curso, disponibilizada abaixo.
- - [Ementa](pdfs/ementa.pdf)
+ * [Ementa](pdfs/ementa.pdf)
 
 # [](#aulas)Aulas
- - [Aula 01 - paradigmas de programação e introdução](aula1-paradigmas.html)
- - [Aula 02 - resolução de exercícios](primeiroprojeto.zip)
- - [Aula 03 - instanciação de objetos](https://gist.github.com/julianofischer/dac07a1171c2adf1d8e22ee7f292ae28)
- - [Aula 04 - mensagens e métodos](mensagens-e-metodos.html)
-     -[Exemplos](assets/aulametodos.zip)
+ * [Aula 01 - paradigmas de programação e introdução](aula1-paradigmas.html)
+ * [Aula 02 - resolução de exercícios](primeiroprojeto.zip)
+ * [Aula 03 - instanciação de objetos](https://gist.github.com/julianofischer/dac07a1171c2adf1d8e22ee7f292ae28)
+ * [Aula 04 - mensagens e métodos](mensagens-e-metodos.html)
+     * [Exemplos](assets/aulametodos.zip)
 
 # [](#material)Material Complementar
 
