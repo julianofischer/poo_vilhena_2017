@@ -15,6 +15,7 @@ Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqu
  * [Aula 04 - mensagens e métodos](mensagens-e-metodos.html)
      * [Exemplos](assets/aulametodos.zip)
      * [Exercicios](assets/exercicio0504.zip)
+     * [Classe Círculo](https://gist.github.com/julianofischer/e4ecfd065a699f67901fc36f433cc20a)
 
 # [](#material)Material Complementar
 
