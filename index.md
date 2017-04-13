@@ -16,6 +16,8 @@ Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqu
      * [Exemplos](assets/aulametodos.zip)
      * [Exercicios](assets/exercicio0504.zip)
      * [Classe Círculo](https://gist.github.com/julianofischer/e4ecfd065a699f67901fc36f433cc20a)
+ * Resolução da atividade avaliativa. Classes [Ponto](https://gist.github.com/julianofischer/c7a6d66c849be584774648525958a6cc) e [Círculo](https://gist.github.com/julianofischer/663f9421f5d79a63ddfe5334bb6dfc80).
+ 
 
 # [](#material)Material Complementar
 
@@ -46,4 +48,3 @@ Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqu
  - [Swing JTable](pdfs/gui/Swing JTable.pdf)
  - [Swing JTextField, JFormattedTextField e JLabel](pdfs/gui/Swing JTextField, JFormattedTextField e JLabel.pdf)
  - [Swing Layout](Swing Layout.pdf)
-
