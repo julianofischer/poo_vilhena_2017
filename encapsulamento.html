@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Programação Orientada a Objetos</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			function init()
+			{
+				var canvas = document.getElementById("canvas");
+				if(canvas.getContext){
+					var ctx = canvas.getContext("2d");
+					// Draw triangle
+					ctx.fillStyle="#A2322E";
+					ctx.beginPath();
+					// Draw a triangle location for each corner from x:y 100,110 -> 200,10 -> 300,110 (it will return to first point)
+					ctx.moveTo(275,110);
+					ctx.lineTo(375,10);
+					ctx.lineTo(475,110);
+					ctx.closePath();
+					ctx.fill();
+				}
+			}
+			onload=init;
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Programação Orientada a Objetos</h1>
+					<h3>Modificadores de acesso e encapsulamento</h3>
+					<p>
+						<small>Professor: Juliano Fischer Naves / <a href="mailto:juliano.naves@ifro.edu.br">juliano.naves@ifro.edu.br</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Modificadores de Acesso</h2>
+					<h3>Definem o escopo/visibilidade de um método/atributo</h3>
+					<ul>
+						<li class="fragment">Permitem que sejam criadas as interfaces* entre as classes e o seu meio externo</li>
+						<li class="fragment">Com eles, é possível determinar exatamente o que o meio externo poderá visualizar</li>
+
+					</ul>
+				</section>
+
+				<section>
+					<h2>Modificadores de Acesso</h2>
+					<h3>Em Java existem basicamente 4 modificadores de acesso diferentes</h3>
+					<ul>
+						<li class="fragment"><b style="color:blue">public</b> (+): atributos/métodos podem ser acessados por objetos de outras classes</li>
+						<li class="fragment"><b style="color:blue">protected</b> (#): membros da classe são acessíveis por objetos da mesma classe, objetos de classes filhas ou objetos de classes que estejam no mesmo pacote</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Modificadores de Acesso</h2>
+					<ul>
+						<li class="fragment"><b style="color:blue">private</b> (-): protege o método ou atributo do acesso externo, permitindo que sejam acessados da própria classe ou por objetos desta classe</li>
+						<li class="fragment"><b style="color:blue">default</b> (package-private): quando modificadores de acesso não são especificados. Métodos/atributos podem ser acessados pela própria classe e por classes do mesmo pacote.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Modificadores de Acesso</h2>
+<table border="1" summary="This table defines levels of access conferred by a modifier">
+<caption style="font-weight: bold" id="accesscontrol-levels">Níveis de Acesso</caption>
+<tr>
+<th id="h1">Modificador</th>
+<th id="h2">Classe</th>
+<th id="h3">Pacote</th>
+<th id="h4">Subclasse</th>
+<th id="h5">Mundo</th>
+</tr>
+<tr>
+<td headers="h1"><code>public</code></td>
+<td headers="h2">S</td>
+<td headers="h3">S</td>
+<td headers="h4">S</td>
+<td headers="h5">S</td>
+</tr>
+<tr>
+<td headers="h1"><code>protected</code></td>
+<td headers="h2">S</td>
+<td headers="h3">S</td>
+<td headers="h4">S</td>
+<td headers="h5">N</td>
+</tr>
+<tr>
+<td headers="h1" style="font-style: italic">no modifier</td>
+<td headers="h2">S</td>
+<td headers="h3">S</td>
+<td headers="h4">N</td>
+<td headers="h5">N</td>
+</tr>
+<tr>
+<td headers="h1"><code>private</code></td>
+<td headers="h2">S</td>
+<td headers="h3">N</td>
+<td headers="h4">N</td>
+<td headers="h5">N</td>
+</tr>
+</table>
+				</section>
+
+				<section>
+					<h2>Modificadores de Acesso (Classes)</h2>
+					<ul>
+						<li class="fragment"><b style="color:blue">public</b>: a classe é visível para todas as classes</li>
+						<li class="fragment"><b style="color:blue">default</b> (package-private): quando um modificador não é especificado a classe é visíve somente para outras classes do mesmo pacote</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Encapsulamento de Dados</h2>
+					<blockquote>Esconde o estado interno dos objetos (atributos) e requer que todas as operações sejam realizadas através dos métodos dos objetos</blockquote>
+					<ul>
+						<li class="fragment">Detalhes de implementação ficam escondidos do mundo externo</li>
+						<li class="fragment">Objeto mantém controle de como os atributos podem ser modificados</li>
+						<ul>
+							<li class="fragment">Evitar valores inválidos para um atributo</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Getters and Setters</h2>
+					<blockquote>
+						Um método <em style="color:red">get</em> é um método sem parâmetros e com tipo de retorno definido, que retorna o valo de um determinado atributo.
+					</blockquote>
+					</p>
+					<blockquote>
+						Um método <em style="color:red">set</em> é um método sem retorno (void) e com parâmetro(s), que altera o valor de um ou mais atributos.
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Exemplo (getters e setters)</h2>
+					<pre><code class="java" data-trim data-noescape>
+class Pessoa {
+    private int idade;
+
+    Pessoa(){
+    }
+
+    public void setIdade(int i){
+        idade = i;
+    }
+
+    public int getIdade(){
+        return idade;
+    }
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Exemplo (sem encapsulamento)</h2>
+					<pre><code class="java" data-trim data-noescape>
+class Pessoa {
+    public int idade;
+
+    Pessoa(){
+    }
+}
+					</code></pre>
+					
+					<pre><code class="java" data-trim data-noescape>
+//main em outra classe
+public static void main(String args[]){
+    Pessoa p = new Pessoa();
+    <b style="color:red">p.idade = -1;</b>
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Exemplo (com encapsulamento)</h2>
+					<pre><code class="java" data-trim data-noescape>
+class Pessoa {
+    private int idade;
+
+    Pessoa(){
+    }
+
+    public void setIdade(int i){
+        if (i > 0) {
+            idade = i;
+        } else {
+            System.out.println("Idade inválida");
+        }
+    }
+}
+					</code></pre>
+					
+					<pre><code class="java" data-trim data-noescape>
+//main em outra classe
+public static void main(String args[]){
+    Pessoa p = new Pessoa();
+    p.setIdade(-1);
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Exercício 1</h2>
+					<h3>Escreva uma classe que represente uma conta bancária</h3>
+					<ul>
+					    <li>A conta armazena o nome, cpf e saldo do cliente</li>
+					    <li>Deve ser possível operações de saque, depósito e visualização de saldo</li>
+					    <li>Não deve ser permitido o saque em contas sem saldo</li>
+					    <li style="color:red">Os atributos devem ser encapsulados</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Exercício 2</h2>
+					<h3>Escreva uma classe que represente um ponto no plano cartesiano</h3>
+					<ul>
+					    <li>Coordenadas X e Y</li>
+					    <li>Métodos para inicializar e calcular a distância até outro ponto</li>
+					    <li style="color:red">Os atributos devem ser encapsulados</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Exercício 3 (entregar)</h2>
+					<h3>Escreva uma classe que represente um Círculo</h3>
+					<ul>
+					    <li>Atributos: nome, raio e centro (objeto da classe Ponto)</li>				
+					    <li>Métodos</li>
+						    <ul>
+							    <li>Inicializar os dados</li>
+							    <li>Calcular diâmetro</li>
+							    <li>Calcular área</li>
+							    <li>Calcular circunferência</li>
+							    <li>Modificar nome</li>
+							    <li>Exibir os dados</li>
+						    </ul>
+					    <li style="color:red">Os atributos devem ser encapsulados</li>				
+					</ul>
+				</section>
+
+				<section>
+					<h4>Exercício 4 (entregar)</h4>
+					<ul>
+ 					    <li>Escreva uma classe Data</li>
+					    <li>Atributos: dia, mês e ano</li>				
+					    <li>Métodos</li>
+						    <ul>
+							    <li>Inicializar os dados</li>
+							    <li>antes (Data d): retorna verdadeiro se a data ocorre antes de d</li>
+							    <li>depois (Data d): retorna verdadeiro se a data ocorre depois de d</li>
+						    </ul>
+					</ul>
+					<ul>
+  					    <li>Escreva uma classe Pessoa</li>
+					    <li>Atributos: nome e dataNascimento (objeto da classe Data)</li>								
+					</ul>
+				</section>
+
+				<section>
+					<h2>Links</h2>
+					<ul>
+						<li><a href="https://www.caelum.com.br/apostila-java-orientacao-objetos/pacotes-organizando-suas-classes-e-bibliotecas/">Pacotes - Organizando suas classes</a></li>
+						<li><a href="https://docs.oracle.com/javase/tutorial/java/package/packages.html">Creating and using packages</a></li>
+						<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Controlling access to members of a Class</a></li>
+						<li><a href="http://www.devmedia.com.br/modificadores-de-acesso-do-java/25404">Modificadores de acesso do Java</a></li>
+						<li><a href="https://www.caelum.com.br/apostila-java-orientacao-objetos/modificadores-de-acesso-e-atributos-de-classe/">Modificadores de acesso e atributos de classe</a></li>
+					</ul>
+				</section>
+				
+
+				<section>
+					<h2>Agradecimentos</h2>
+					<ul>
+					    <li>Professor Raphael de Souza Rosa Gomes (UFMT)</li>
+					    <li>Professora Karen Figueiredo (UFMT)</li>
+					</ul>
+				</section>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				slideNumber: true,
+				center: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
