@@ -16,6 +16,7 @@ Bem vindos ao mundo da programação orientada a objetos, jovens _padawans_. Aqu
      * [Exemplos](assets/aulametodos.zip)
      * [Exercicios](assets/exercicio0504.zip)
      * [Classe Círculo](https://gist.github.com/julianofischer/e4ecfd065a699f67901fc36f433cc20a)
+ * [Sábado letivo 27/05](assets/sabadoletivo2705.zip)
 
 # [](#material)Material Complementar
 
